@@ -15,6 +15,12 @@
 
 body {
     font-family: 'Barlow Semi Condensed', sans-serif;
+    transition: transform 0.3s ease;
+}
+
+body.show-nav {
+    /* width of nav */
+    transform: translateX(200px);
 }
 
 nav {
@@ -100,4 +106,102 @@ button:focus {
     position: absolute;
     top: 20px;
     left: 20px;
+}
+
+.cta-btn {
+    padding: 12px 30px;
+    font-size: 20px;
+}
+
+.container {
+    padding: 15px;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 800px;
+}
+
+.modal-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+.modal-container.show-modal {
+    display: block;
+}
+
+.modal {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    width: 400px;
+    animation-name: modal-open;
+    animation-duration: var(--modal-duration);
+}
+
+.modal-header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 15px;
+}
+
+.modal-header h3 {
+    margin: 0;
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+.modal-form div {
+    margin: 15px 0;
+}
+
+.modal-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.modal-form .form-input {
+    padding: 8px;
+    width: 100%;
+}
+
+.submit-btn {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border-radius: 5px;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.close-btn {
+    background-color: transparent;
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+/* modal animation */
+@keyframes modal-open {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
